@@ -6,28 +6,26 @@ namespace Wheel_Of_Fortune_MVP
 {
     class Player
     {
-        public string name;
+        public string playerName;
         public char playerChar;
         public string playerWord;
-
 
         public Player()
         {
             Console.WriteLine("Enter Name: "); 
-            name = Console.ReadLine();
+            playerName = Console.ReadLine();
         }
+
         public char GetLetter()
         {
-            Console.WriteLine("Guess A Letter:"); 
-            playerChar = Convert.ToChar(Console.Read()); 
-            return playerChar;
+            Console.WriteLine("Guess A Letter:");        
+            return Convert.ToChar(Console.Read());
         }
 
         public string GetWord()
         {
             Console.WriteLine("Guess A Word:");
-            playerWord = Console.ReadLine();
-            return playerWord; 
+            return Console.ReadLine();
         }
 
     }
