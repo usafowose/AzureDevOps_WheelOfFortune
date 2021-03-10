@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Wheel_Of_Fortune_MVP
 {
-    class Player
+    public class Player
     {
         public string playerName;
         public char playerChar;
