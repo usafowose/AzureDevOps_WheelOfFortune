@@ -11,18 +11,21 @@ namespace Wheel_Of_Fortune_MVP
         //public bool HasWon { get; set; }
         public string TargetWord { get; private set; }
         public string DisplayWord { get; set; }
+        public RandomGenerator Rand { get; set; }
 
-        public Game(string targetWord, string displayWord)
+        public Game(string targetWord, string displayWord, RandomGenerator rand)
         {
             TargetWord = GetRandomTargetWord();
             DisplayWord = PopulateDash(TargetWord);
+            Rand = rand;
             //HasWon = false;
         }
 
         private string GetRandomTargetWord()
         {
-            Random rand = new Random();
-            int randomIndex = rand.Next(words.Length);
+            //Random rand = new Random();
+            //int randomIndex = rand.Next(words.Length);
+            int randomIndex = Rand.GetNumber(words.Length);
             return words[randomIndex];
         }
 
