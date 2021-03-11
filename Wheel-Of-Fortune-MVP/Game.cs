@@ -7,24 +7,18 @@ namespace Wheel_Of_Fortune_MVP
 
     public class Game
     {
-        private string[] words = { };
-        //public bool HasWon { get; set; }
+        private string[] words = { "encapsulation", "inheritance", "polymorphism", "abstraction", "composition", "banana"};
         public string TargetWord { get; private set; }
         public string DisplayWord { get; set; }
         public RandomGenerator Rand { get; set; }
 
-        public Game(string targetWord, string displayWord, RandomGenerator rand)
+        public Game(RandomGenerator rand)
         {
-            TargetWord = GetRandomTargetWord();
-            DisplayWord = PopulateDash(TargetWord);
             Rand = rand;
-            //HasWon = false;
         }
 
         private string GetRandomTargetWord()
         {
-            //Random rand = new Random();
-            //int randomIndex = rand.Next(words.Length);
             int randomIndex = Rand.GetNumber(words.Length);
             return words[randomIndex];
         }
@@ -39,7 +33,13 @@ namespace Wheel_Of_Fortune_MVP
             return dashedString.ToString();
         }
 
-        private List<int> CheckCharIndex(char c)
+        public void StartGame()
+        {
+            TargetWord = GetRandomTargetWord();
+            DisplayWord = PopulateDash(TargetWord);
+        }
+
+        public List<int> CheckCharIndex(char c)
         {
             List<int> indexList = new List<int>();
 
@@ -53,7 +53,7 @@ namespace Wheel_Of_Fortune_MVP
             return indexList;
         }
 
-        private void ReplaceDash(List<int> indexList, char c)
+        public void ReplaceDash(List<int> indexList, char c)
         {
             char[] charArray = DisplayWord.ToCharArray();
             foreach (var i in indexList)
@@ -63,7 +63,7 @@ namespace Wheel_Of_Fortune_MVP
             DisplayWord = new string(charArray);
         }
 
-        private bool HasWon(string guessedWord)
+        public bool HasWon(string guessedWord)
         {
             return TargetWord == DisplayWord || guessedWord.Equals(TargetWord);
         }
