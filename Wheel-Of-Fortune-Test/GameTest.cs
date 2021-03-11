@@ -8,6 +8,7 @@ namespace Wheel_Of_Fortune_Test
     [TestClass]
     public class GameTest
     {
+
         [TestMethod]
         public void GameConstructor_CreatesInstanceOfGame_Game()
         {
@@ -40,11 +41,9 @@ namespace Wheel_Of_Fortune_Test
         {
             List<int> test = new List<int> { 1, 3, 5 };
 
-            Mock<RandomGenerator> randomTest = new Mock<RandomGenerator>(MockBehavior.Strict);
-            randomTest.Setup(h => h.GetNumber(It.Is<int>(t => t == 6)))
-              .Returns(5);
-            Game game = new Game(randomTest.Object);
-            game.StartGame();
+            RandomGenerator rand = new RandomGenerator();
+            Game game = new Game(rand);
+            game.TargetWord = "banana";
             List<int> result = game.CheckCharIndex('a');
 
             Assert.AreEqual(test[0], result[0]);
@@ -56,11 +55,9 @@ namespace Wheel_Of_Fortune_Test
         [TestMethod]
         public void CheckCharIndex_NoLetterEinBananaCaseSensitive_EmptyListOfIntegers()
         {
-            Mock<RandomGenerator> randomTest = new Mock<RandomGenerator>(MockBehavior.Strict);
-            randomTest.Setup(h => h.GetNumber(It.Is<int>(t => t == 6)))
-              .Returns(5);
-            Game game = new Game(randomTest.Object);
-            game.StartGame();
+            RandomGenerator rand = new RandomGenerator();
+            Game game = new Game(rand);
+            game.TargetWord = "banana";
             List<int> result = game.CheckCharIndex('E');
 
             //Assert
@@ -72,11 +69,10 @@ namespace Wheel_Of_Fortune_Test
         {
             string test = "-o--o----o-";
 
-            Mock<RandomGenerator> randomTest = new Mock<RandomGenerator>(MockBehavior.Strict);
-            randomTest.Setup(h => h.GetNumber(It.Is<int>(t => t == 6)))
-              .Returns(4);
-            Game game = new Game(randomTest.Object);
-            game.StartGame();
+            RandomGenerator rand = new RandomGenerator();
+            Game game = new Game(rand);
+            game.TargetWord = "composition";
+            game.DisplayWord = "-----------";
             List<int> listOfIndices = game.CheckCharIndex('o');
             game.ReplaceDash(listOfIndices, 'o');
 
@@ -86,13 +82,25 @@ namespace Wheel_Of_Fortune_Test
         [TestMethod]
         public void HasWon_IndicateWinningIfGuessedWordCorrect_True()
         {
-            Mock<RandomGenerator> randomTest = new Mock<RandomGenerator>(MockBehavior.Strict);
-            randomTest.Setup(h => h.GetNumber(It.Is<int>(t => t == 6)))
-              .Returns(5);
-            Game game = new Game(randomTest.Object);
-            game.StartGame();
+            RandomGenerator rand = new RandomGenerator();
+            Game game = new Game(rand);
+            game.TargetWord = "banana";
 
             Assert.AreEqual(true, game.HasWon("banana"));
+        }
+
+        [TestMethod]
+        public void ReplaceDash_ReplaceDashesByNonExistentLetterW()
+        {
+            string test = "-------------";
+            Mock<RandomGenerator> randomTest = new Mock<RandomGenerator>(MockBehavior.Strict);
+            randomTest.Setup(j => j.GetNumber(It.Is<int>(t => t == 6))).Returns(0);
+
+            Game game = new Game(randomTest.Object);
+            game.StartGame();
+            List<int> listofIndices = game.CheckCharIndex('W');
+            game.ReplaceDash(listofIndices, 'W');
+            Assert.AreEqual(test, game.DisplayWord); 
         }
     }
 }

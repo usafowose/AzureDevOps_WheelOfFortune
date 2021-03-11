@@ -4,11 +4,10 @@ using System.Text;
 
 namespace Wheel_Of_Fortune_MVP
 {
-
     public class Game
     {
         private string[] words = { "encapsulation", "inheritance", "polymorphism", "abstraction", "composition", "banana"};
-        public string TargetWord { get; private set; }
+        public string TargetWord { get; set; }
         public string DisplayWord { get; set; }
         public RandomGenerator Rand { get; set; }
 
@@ -16,6 +15,18 @@ namespace Wheel_Of_Fortune_MVP
         {
             Rand = rand;
         }
+
+        /*public void InputNonCharErrorMessage(var input)
+        {
+            if (input.TypeOf(String))
+            {
+                Console.WriteLine("Sorry, you entered a string. Please enter a letter"); 
+            } 
+            else if (input.TypeOf(Integer))
+            {
+                Console.WriteLine("Sorry, you entered a number. Please enter a letter");
+            }
+        }*/
 
         private string GetRandomTargetWord()
         {
@@ -58,7 +69,7 @@ namespace Wheel_Of_Fortune_MVP
             char[] charArray = DisplayWord.ToCharArray();
             foreach (var i in indexList)
             {
-                charArray[i] = c;
+                charArray[i] = Char.ToLower(c);
             }
             DisplayWord = new string(charArray);
         }
