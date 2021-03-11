@@ -26,7 +26,7 @@ namespace Wheel_Of_Fortune_MVP
         public void GuessLetter()
         {
             Console.WriteLine("Guess A Letter:");
-            playerChar = (char)Console.Read(); 
+            playerChar = (char)Console.ReadLine()[0]; 
         }
 
         public void GuessWord()

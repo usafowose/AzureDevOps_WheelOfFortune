@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Wheel_Of_Fortune_MVP
 {
@@ -62,13 +63,15 @@ namespace Wheel_Of_Fortune_MVP
             Console.WriteLine("Enter your name: ");
             Player player1 = new Player(Console.ReadLine());
 
-            Console.WriteLine($"Welcome {player1.playerName}/t Let's Start!");
+            Console.WriteLine($"Welcome {player1.playerName}\t Let's Start!");
             game1.StartGame(); //diff method
 
-            while (!game1.HasWon())
+            Console.WriteLine($"\n\n{game1.TargetWord}");
+
+            while (game1.HasWon() == false)
             {
                 player1.GuessLetter();
-                var charList = game1.CheckCharIndex(player1.playerChar);
+                List<int> charList = game1.CheckCharIndex(player1.playerChar);
                 
                 if(charList.Count == 0)
                 {
@@ -77,6 +80,7 @@ namespace Wheel_Of_Fortune_MVP
                 else
                 {
                     game1.ReplaceDash(charList, player1.playerChar);
+                    Console.WriteLine(game1.DisplayWord);
                 }
 
 
