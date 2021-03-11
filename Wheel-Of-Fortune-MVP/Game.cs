@@ -74,9 +74,14 @@ namespace Wheel_Of_Fortune_MVP
             DisplayWord = new string(charArray);
         }
 
-        public bool HasWon(string guessedWord)
+        //public bool HasWon(string guessedWord)
+        //{
+        //    return TargetWord == DisplayWord || guessedWord.Equals(TargetWord);
+        //}
+
+        public bool HasWon()
         {
-            return TargetWord == DisplayWord || guessedWord.Equals(TargetWord);
+            return TargetWord == DisplayWord;
         }
     }
 }

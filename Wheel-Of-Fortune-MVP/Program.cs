@@ -7,6 +7,7 @@ namespace Wheel_Of_Fortune_MVP
     {
         static void Main(string[] args)
         {
+            PlayGame.StartGame();
             //Console.WriteLine("Hello World!");
             //Player Alexandra = new Player("Drew");
             //Console.WriteLine(Alexandra.playerName);
