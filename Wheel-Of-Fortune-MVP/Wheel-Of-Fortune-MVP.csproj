@@ -4,6 +4,7 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Wheel_Of_Fortune_MVP</RootNamespace>
+    <StartupObject>Wheel_Of_Fortune_MVP.Program</StartupObject>
   </PropertyGroup>
 
 </Project>

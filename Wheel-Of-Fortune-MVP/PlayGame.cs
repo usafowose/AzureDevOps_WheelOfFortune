@@ -47,9 +47,16 @@ namespace Wheel_Of_Fortune_MVP
 
         public void Play()
         {
+            /// <summary>
+            /// <c>rand</c> is assigned to a random integer.
+            /// </summary>
             RandomGenerator rand = new RandomGenerator();
             Game game = new Game(rand);
 
+            ///<summary>
+            /// New player is prompted for their name on the Console.
+            /// The typed input is stored to a <c>player1</c> variable.
+            ///</summary>
             Console.WriteLine("Enter your name: ");
             Player player = new Player(Console.ReadLine());
 
@@ -76,14 +83,14 @@ namespace Wheel_Of_Fortune_MVP
                     }
                 }
                 else
-                {
+            {
                     if (game.HasWon(guessedLetter))
-                    {
+                {
                         Console.WriteLine("Congratulation!");
                         return;
-                    }
-                    else
-                    {
+                }
+                else
+                {
                         Console.WriteLine("Wrong guess, keep playing!");
                         Console.WriteLine(game.DisplayWord);
                     }
@@ -91,5 +98,24 @@ namespace Wheel_Of_Fortune_MVP
             }
             Console.WriteLine("Congrats!!!! You've won!!!");
         }
-    }
+    } 
 }
+
+//-----
+/**
+        Player player1 = new Player();
+Game game1 = new Game();
+hasWon = game1.hasWon;
+
+while hasWon == false{
+
+    Game.StartGame();
+
+    charGuessed = player1.guessLetter();
+**/
+
+    //start game udates targetWORD and DisplayWord
+    // calls GetRandomTargetWord and DisplayWord
+
+    
+  
