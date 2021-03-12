@@ -73,24 +73,30 @@ namespace Wheel_Of_Fortune_MVP
                     if (Char.IsLetter(guessedLetter[0]))
                     {
                         var charList = game.CheckCharIndex(guessedLetter[0]);
+                        if (charList.Count == 0)
+                        {
+                            Console.WriteLine("Letter not found in word, try again!!");
+                            Console.WriteLine(game.DisplayWord);
+                            continue;
+                        }
                         game.ReplaceDash(charList, guessedLetter[0]);
                         Console.WriteLine(game.DisplayWord);
                     }
                     else
                     {
-                        Console.WriteLine("Only letters between a-z please");
+                        Console.WriteLine("Only Letters Between A-Z Please");
                         Console.WriteLine(game.DisplayWord);
                     }
                 }
                 else
-            {
+                {
                     if (game.HasWon(guessedLetter))
-                {
-                        Console.WriteLine("Congratulation!");
+                    {
+                        Console.WriteLine("Congratulations!");
                         return;
-                }
-                else
-                {
+                    }
+                    else
+                    {
                         Console.WriteLine("Wrong guess, keep playing!");
                         Console.WriteLine(game.DisplayWord);
                     }
@@ -98,24 +104,5 @@ namespace Wheel_Of_Fortune_MVP
             }
             Console.WriteLine("Congrats!!!! You've won!!!");
         }
-    } 
+    }
 }
-
-//-----
-/**
-        Player player1 = new Player();
-Game game1 = new Game();
-hasWon = game1.hasWon;
-
-while hasWon == false{
-
-    Game.StartGame();
-
-    charGuessed = player1.guessLetter();
-**/
-
-    //start game udates targetWORD and DisplayWord
-    // calls GetRandomTargetWord and DisplayWord
-
-    
-  
