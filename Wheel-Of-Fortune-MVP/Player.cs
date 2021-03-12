@@ -7,30 +7,32 @@ namespace Wheel_Of_Fortune_MVP
     public class Player
     {
         public string playerName;
-        //public char playerChar;
-        //public string playerWord;
+        public char playerChar;
+        public string playerWord;
+        public string latestGuess;
 
-        public Player(string name) 
+        public Player(string name)
         {
             playerName = name;
         }
-            //Console.WriteLine("Enter Name: "); 
-            //playerName = Console.ReadLine();
 
-        
-
-        public char GuessLetter(char letter)
+       /* public void MakeAGuess()
         {
-            //Console.WriteLine("Guess A Letter:");        
-
-            return letter;
+            Console.WriteLine("Make A Guess: ");
+            var input = Console.ReadLine();
+            input.Length == 1 ? (playerChar = Convert.ToChar(input) && latestGuess = "char") : (playerWord = input && "string");
+        }
+*/
+        public void GuessLetter()
+        {
+            Console.WriteLine("Guess A Letter:");
+            playerChar = (char)Console.ReadLine()[0]; 
         }
 
-        public string GuessWord(string word)
+        public void GuessWord()
         {
-            //Console.WriteLine("Guess A Word:");
-            return word; 
-            //return Console.ReadLine();
+            Console.WriteLine("Guess A Word:");
+            playerWord = Console.ReadLine();
         }
 
     }
