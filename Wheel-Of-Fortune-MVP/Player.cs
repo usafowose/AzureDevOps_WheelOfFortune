@@ -45,46 +45,19 @@ namespace Wheel_Of_Fortune_MVP
         public void GuessLetter()
         {
             Console.WriteLine("Guess A Letter:");
-            playerChar = (char)Console.ReadLine()[0]; 
+            playerChar = (char)Console.ReadLine()[0];
         }
 
-        /// <summary>
-        /// not used yet
-        /// </summary>
-        public void GuessWord()
+        public string GuessWord()
         {
             Console.WriteLine("Guess A Word:");
-            playerWord = Console.ReadLine();
+            return Console.ReadLine();
         }
 
+        public string Guess()
+        {
+            Console.WriteLine("Guess a letter or word:");
+            return Console.ReadLine();
+        }
     }
-
-   
-
-    // Player.GuessLetter()
-
-
-
-
-    //---------
-    //interface IGuessedChar
-    //{
-    //    char guessChar();
-    //}
-
-    //interface IGuessedString
-    //{
-    //    string GuessString(); 
-    //}
-
-    //public class Guess: IGuessedChar, IGuessedString
-    //{
-        
-    //}
 }
-
-// string playerChar;
-// Console.Write("Enter a letter ");
-// PlayerChar = Console.ReadLine();
-// Console.WriteLine("You entered '{0}'", playerChar);
-//

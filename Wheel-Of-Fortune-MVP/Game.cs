@@ -104,17 +104,17 @@ namespace Wheel_Of_Fortune_MVP
             DisplayWord = new string(charArray);
         }
 
-        //public bool HasWon(string guessedWord)
-        //{
-        //    return TargetWord == DisplayWord || guessedWord.Equals(TargetWord);
-        //}
-
         /// <summary>
         /// Method asynchronously checks if all letters of <c>TargetWord</c> have been guessed
         /// </summary>
         /// <returns>Boolean value that breaks game playing loop.</returns>
 
-        public bool HasWon()
+        public bool HasWon(string guessedWord)
+        {
+            return guessedWord.Equals(TargetWord);
+        }
+
+        public bool DisplayIsTarget()
         {
             return TargetWord == DisplayWord;
         }

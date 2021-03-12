@@ -7,42 +7,42 @@ namespace Wheel_Of_Fortune_Test
     [TestClass]
     public class PlayerTest
     {
-        Player player1 = new Player("Drew");
+        //Player player1 = new Player("Drew");
 
-        [TestMethod]
-        public void NewPlayerTest()
-        {
-            //Arrange 
+        //[TestMethod]
+        //public void NewPlayerTest()
+        //{
+        //    //Arrange 
 
-            //Act 
+        //    //Act 
         
-            string playerName = player1.playerName;
+        //    string playerName = player1.playerName;
 
-            //Assert
-            Assert.AreEqual("Drew", playerName); 
-        }
+        //    //Assert
+        //    Assert.AreEqual("Drew", playerName); 
+        //}
 
-        [TestMethod]
-        public void NewLetterTest() 
-        {
-            //Act
-            char playerChar = player1.GuessLetter('s');
+        //[TestMethod]
+        //public void NewLetterTest() 
+        //{
+        //    //Act
+        //    char playerChar = player1.GuessLetter('s');
             
 
-            //Assert
-            Assert.AreEqual('s', playerChar);
-            Assert.AreNotEqual('q', playerChar);
-        }
+        //    //Assert
+        //    Assert.AreEqual('s', playerChar);
+        //    Assert.AreNotEqual('q', playerChar);
+        //}
 
-        [TestMethod]
-        public void GuessWordTest()
-        {
-            string guessedWord = player1.GuessWord("Apples");
+        //[TestMethod]
+        //public void GuessWordTest()
+        //{
+        //    string guessedWord = player1.GuessWord("Apples");
 
-            Assert.AreNotEqual("Oranges", guessedWord);
-            Assert.AreEqual("Apples", guessedWord);
+        //    Assert.AreNotEqual("Oranges", guessedWord);
+        //    Assert.AreEqual("Apples", guessedWord);
 
-        }
+        //}
 
     }
 

@@ -10,9 +10,8 @@ namespace Wheel_Of_Fortune_MVP
         /// </summary>
         static void Main(string[] args)
         {
-            PlayGame.StartGame();        
+            PlayGame game = new PlayGame();
+            game.Introduction();
         }
-
-        
     }
 }
