@@ -12,17 +12,17 @@ namespace Wheel_Of_Fortune_MVP
         public string playerName;
 
         /// <summary>
-        /// <c>playerChar</c> represents the most recent guessed char (<c>Player</c> input)
+        /// <c>playerChar</c> represents the most recently guessed <c>Player</c> input char
         /// </summary>
         public char playerChar;
 
         /// <summary>
-        /// not used yet
+        /// <c>playerWord</c> represents the most recently guessed <c>Player</c> input string
         /// </summary>
         public string playerWord;
 
         /// <summary>
-        /// not used yet
+        /// <c>latestGuess</c> represents the most recently guessed <c>Player</c> input accepting any length input string
         /// </summary>
         public string latestGuess;
 
@@ -36,8 +36,8 @@ namespace Wheel_Of_Fortune_MVP
             Console.WriteLine("Make A Guess: ");
             var input = Console.ReadLine();
             input.Length == 1 ? (playerChar = Convert.ToChar(input) && latestGuess = "char") : (playerWord = input && "string");
-        }
-*/
+        }*/
+
        /// <summary>
        /// Method prompts <c>Player</c> for a letter.
        /// <c>Console.ReadLine</c> accepts first char of <c>Player</c> input and assigns to <c>playerChar</c>
@@ -48,12 +48,20 @@ namespace Wheel_Of_Fortune_MVP
             playerChar = (char)Console.ReadLine()[0];
         }
 
+        /// <summary>
+        /// Method prompts <c>Player</c> for a letter.
+        /// <c>Console.ReadLine</c> accepts string input
+        /// </summary>
         public string GuessWord()
         {
             Console.WriteLine("Guess A Word:");
             return Console.ReadLine();
         }
 
+        /// <summary>
+        /// Method prompts <c>Player</c> for a string input of any length.
+        /// <c>Console.ReadLine</c> accepts string input
+        /// </summary>
         public string Guess()
         {
             Console.WriteLine("Guess a letter or word:");

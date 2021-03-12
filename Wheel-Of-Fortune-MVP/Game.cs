@@ -10,23 +10,7 @@ namespace Wheel_Of_Fortune_MVP
         /// <c>words</c> is a string array of hardcoded <c>TargetWord</c> candidates
         /// </summary>
         private string[] words = { "encapsulation", "inheritance", "polymorphism", "abstraction", "composition", "banana"};
-        /*"it works on my computer", 
-
-Have you turned it off and back on again? 
-
-Add it to the Backlog
-
-What’s your tech stack? 
-
-What’s the O Notation? 
-
-Apple or Android
-
-Too long; Didn’t read
-
-The more I C#, the less I see.  
-
-No mistakes, just random features*/
+        // private string[] words = { "it works on my computer", "have you turned it off and back on again", "add it to the backlog", "tech stack", "no mistakes just random features", "git merge origin master" };
 
         /// <summary>
         /// <c>TargetWord</c> is a string randomly generated from <c>words</c> array.
@@ -75,7 +59,7 @@ No mistakes, just random features*/
         }
 
         /// <summary>
-        /// Calls <c>GetRandomTargetWord()</c> and <c>DisplayWord()</c> methods to generate the two strings assigned to <c>TargetWord</c> and <c>DisplayWord</c>
+        /// Method calls <c>GetRandomTargetWord()</c> and <c>DisplayWord()</c> methods to generate the two strings assigned to <c>TargetWord</c> and <c>DisplayWord</c>
         /// Returns nothing.
         /// </summary>
         public void StartGame()
@@ -125,12 +109,15 @@ No mistakes, just random features*/
         /// Method asynchronously checks if all letters of <c>TargetWord</c> have been guessed
         /// </summary>
         /// <returns>Boolean value that breaks game playing loop.</returns>
-
         public bool HasWon(string guessedWord)
         {
             return guessedWord.Equals(TargetWord);
         }
 
+        /// <summary>
+        /// Method checks if <c>DisplayWord</c> matches <c>TargetWord</c>. This occurs when there are no more dashes ('-') in <c>DisplayWord</c>
+        /// </summary>
+        /// <returns></returns>
         public bool DisplayIsTarget()
         {
             return TargetWord == DisplayWord;
