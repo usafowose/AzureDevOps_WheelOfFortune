@@ -10,7 +10,24 @@ namespace Wheel_Of_Fortune_MVP
         /// <c>words</c> is a string array of hardcoded <c>TargetWord</c> candidates
         /// </summary>
         private string[] words = { "encapsulation", "inheritance", "polymorphism", "abstraction", "composition", "banana"};
-        
+        /*"it works on my computer", 
+
+Have you turned it off and back on again? 
+
+Add it to the Backlog
+
+What’s your tech stack? 
+
+What’s the O Notation? 
+
+Apple or Android
+
+Too long; Didn’t read
+
+The more I C#, the less I see.  
+
+No mistakes, just random features*/
+
         /// <summary>
         /// <c>TargetWord</c> is a string randomly generated from <c>words</c> array.
         /// </summary>
