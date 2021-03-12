@@ -101,7 +101,7 @@ namespace Wheel_Of_Fortune_Test
             game.StartGame();
             List<int> listofIndices = game.CheckCharIndex('W');
             game.ReplaceDash(listofIndices, 'W');
-            Assert.AreEqual(test, game.DisplayWord);
+            Assert.AreEqual(test, game.DisplayWord); 
         }
     }
 }
