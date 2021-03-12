@@ -16,18 +16,6 @@ namespace Wheel_Of_Fortune_MVP
             Rand = rand;
         }
 
-        /*public void InputNonCharErrorMessage(var input)
-        {
-            if (input.TypeOf(String))
-            {
-                Console.WriteLine("Sorry, you entered a string. Please enter a letter"); 
-            } 
-            else if (input.TypeOf(Integer))
-            {
-                Console.WriteLine("Sorry, you entered a number. Please enter a letter");
-            }
-        }*/
-
         private string GetRandomTargetWord()
         {
             int randomIndex = Rand.GetNumber(words.Length);
@@ -76,7 +64,12 @@ namespace Wheel_Of_Fortune_MVP
 
         public bool HasWon(string guessedWord)
         {
-            return TargetWord == DisplayWord || guessedWord.Equals(TargetWord);
+            return guessedWord.Equals(TargetWord);
+        }
+
+        public bool DisplayIsTarget()
+        {
+            return TargetWord == DisplayWord;
         }
     }
 }

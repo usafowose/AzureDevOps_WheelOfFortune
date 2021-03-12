@@ -7,14 +7,8 @@ namespace Wheel_Of_Fortune_MVP
     {
         static void Main(string[] args)
         {
-            //Console.WriteLine("Hello World!");
-            //Player Alexandra = new Player("Drew");
-            //Console.WriteLine(Alexandra.playerName);
-            //Console.WriteLine(Alexandra.GuessLetter());
-            //Console.WriteLine(Alexandra.GuessWord());
-            
+            PlayGame game = new PlayGame();
+            game.Introduction();
         }
-
-        
     }
 }
