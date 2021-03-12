@@ -55,19 +55,45 @@ namespace Wheel_Of_Fortune_MVP
         //    Console.WriteLine(player1.playerName); //Andrew
         //}
 
+        /// <summary>
+        /// Method begins the game
+        /// </summary>
         public static void StartGame()
         {
+            /// <summary>
+            /// <c>rand</c> is assigned to a random integer.
+            /// </summary>
             RandomGenerator rand = new RandomGenerator();
+
+            ///<summary>
+            ///<c>game1</c> is instantiated with the newly-generated <c>rand</c> integer
+            ///</summary>
             Game game1 = new Game(rand);
 
+            ///<summary>
+            /// New player is prompted for their name on the Console.
+            /// The typed input is stored to a <c>player1</c> variable.
+            ///</summary>
             Console.WriteLine("Enter your name: ");
             Player player1 = new Player(Console.ReadLine());
 
-            Console.WriteLine($"Welcome {player1.playerName}\t Let's Start!");
-            game1.StartGame(); //diff method
+            ///<summary>
+            /// <c>player1</c> is welcomed to the game
+            ///</summary>
+            Console.WriteLine($"Welcome {player1.playerName}!\nLet's Play Wheel ~ Of ~ Fortune!!! ~ ~ ~");
 
-            Console.WriteLine($"\n\n{game1.TargetWord}");
+            ///<summary>
+            /// This method initializes the <c>TargetWord</c> and <c>DisplayWord</c> for the game
+            ///</summary>
+            game1.StartGame();
 
+            // Console.WriteLine($"\n\n{game1.TargetWord}");
+
+            /// <summary>
+            /// <c>game1.HasWon()</c> is an asynchronous method returning a boolean value in regard to the win/not won state of the game.
+            /// Until <c>game1</c> is won, <c>player1</c> is placed in a gaming loop that continues to request letters and replace <c>DisplayWord</c> dashes 
+            /// until all the letters have been guessed.
+            /// </summary>
             while (game1.HasWon() == false)
             {
                 player1.GuessLetter();
@@ -75,24 +101,16 @@ namespace Wheel_Of_Fortune_MVP
                 
                 if(charList.Count == 0)
                 {
-                    Console.WriteLine("Letter Not in word please pick again");             
+                    Console.WriteLine("Uh-Oh. Letter is not in word. Please pick again:");             
                 }
                 else
                 {
                     game1.ReplaceDash(charList, player1.playerChar);
                     Console.WriteLine(game1.DisplayWord);
                 }
-
-
             }
-            Console.WriteLine("Congrats!!!! you've won!!!");
+            Console.WriteLine("Congratulations!!!! You've won!!!");
         }
-
-        //public void GetLetter()
-        //{
-        //    player1.
-        //}
-
     } 
 }
 
