@@ -63,9 +63,17 @@ namespace Wheel_Of_Fortune_MVP
                 string guessedLetter = player.Guess().Trim();
                 if (guessedLetter.Length == 1)
                 {
-                    var charList = game.CheckCharIndex(guessedLetter[0]);
-                    game.ReplaceDash(charList, guessedLetter[0]);
-                    Console.WriteLine(game.DisplayWord);
+                    if (Char.IsLetter(guessedLetter[0]))
+                    {
+                        var charList = game.CheckCharIndex(guessedLetter[0]);
+                        game.ReplaceDash(charList, guessedLetter[0]);
+                        Console.WriteLine(game.DisplayWord);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Only letters between a-z please");
+                        Console.WriteLine(game.DisplayWord);
+                    }
                 }
                 else
                 {
